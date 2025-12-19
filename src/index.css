@@ -2,95 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/700.css';
+@import '@fontsource/orbitron/400.css';
+@import '@fontsource/orbitron/700.css';
+@import '@fontsource/orbitron/900.css';
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cyberpunk Dark Theme */
+    --background: 240 10% 4%;
+    --foreground: 180 100% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 10% 6%;
+    --card-foreground: 180 100% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 180 100% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Neon Cyan Primary */
+    --primary: 180 100% 50%;
+    --primary-foreground: 240 10% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Magenta Secondary */
+    --secondary: 300 100% 50%;
+    --secondary-foreground: 240 10% 4%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted dark surfaces */
+    --muted: 240 10% 12%;
+    --muted-foreground: 180 30% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Lime Accent */
+    --accent: 120 100% 50%;
+    --accent-foreground: 240 10% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 180 50% 20%;
+    --input: 240 10% 12%;
+    --ring: 180 100% 50%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom Cyberpunk Colors */
+    --neon-cyan: 180 100% 50%;
+    --neon-magenta: 300 100% 50%;
+    --neon-lime: 120 100% 50%;
+    --neon-orange: 30 100% 50%;
+    --matrix-green: 120 100% 35%;
+    
+    /* Glows */
+    --glow-cyan: 0 0 20px hsl(180 100% 50% / 0.5), 0 0 40px hsl(180 100% 50% / 0.3), 0 0 60px hsl(180 100% 50% / 0.1);
+    --glow-magenta: 0 0 20px hsl(300 100% 50% / 0.5), 0 0 40px hsl(300 100% 50% / 0.3), 0 0 60px hsl(300 100% 50% / 0.1);
+    --glow-lime: 0 0 20px hsl(120 100% 50% / 0.5), 0 0 40px hsl(120 100% 50% / 0.3);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 240 10% 6%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 240 10% 4%;
+    --sidebar-accent: 300 100% 50%;
+    --sidebar-accent-foreground: 240 10% 4%;
+    --sidebar-border: 180 50% 20%;
+    --sidebar-ring: 180 100% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 240 10% 4%;
+    --foreground: 180 100% 95%;
+    --card: 240 10% 6%;
+    --card-foreground: 180 100% 95%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 180 100% 95%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 300 100% 50%;
+    --secondary-foreground: 240 10% 4%;
+    --muted: 240 10% 12%;
+    --muted-foreground: 180 30% 60%;
+    --accent: 120 100% 50%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 180 50% 20%;
+    --input: 240 10% 12%;
+    --ring: 180 100% 50%;
   }
 }
 
@@ -100,6 +96,241 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
+    font-family: 'JetBrains Mono', monospace;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+@layer components {
+  /* Scanline overlay effect */
+  .scanlines {
+    position: relative;
+  }
+  
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--neon-cyan) / 0.03) 2px,
+      hsl(var(--neon-cyan) / 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  /* Neon glow effects */
+  .neon-glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+
+  .neon-glow-magenta {
+    box-shadow: var(--glow-magenta);
+  }
+
+  .neon-glow-lime {
+    box-shadow: var(--glow-lime);
+  }
+
+  .neon-text-cyan {
+    text-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.8), 
+                 0 0 20px hsl(var(--neon-cyan) / 0.6), 
+                 0 0 30px hsl(var(--neon-cyan) / 0.4);
+  }
+
+  .neon-text-magenta {
+    text-shadow: 0 0 10px hsl(var(--neon-magenta) / 0.8), 
+                 0 0 20px hsl(var(--neon-magenta) / 0.6), 
+                 0 0 30px hsl(var(--neon-magenta) / 0.4);
+  }
+
+  /* Glitch text effect */
+  .glitch {
+    position: relative;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 hsl(var(--neon-magenta));
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+  }
+
+  .glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 hsl(var(--neon-cyan));
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim2 2s infinite linear alternate-reverse;
+  }
+
+  /* Cyber card */
+  .cyber-card {
+    @apply relative bg-card border border-border rounded-lg overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(240 10% 8%) 100%);
+  }
+
+  .cyber-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(var(--neon-cyan) / 0.3), transparent, hsl(var(--neon-magenta) / 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .cyber-card:hover {
+    @apply neon-glow-cyan;
+  }
+
+  /* Matrix rain background */
+  .matrix-bg {
+    background: 
+      radial-gradient(ellipse at top, hsl(var(--neon-cyan) / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, hsl(var(--neon-magenta) / 0.1) 0%, transparent 50%),
+      hsl(var(--background));
+  }
+
+  /* Terminal cursor blink */
+  .cursor-blink::after {
+    content: '█';
+    animation: blink 1s step-end infinite;
+  }
+
+  /* Pulse animation */
+  .pulse-neon {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Tag chips */
+  .cyber-tag {
+    @apply px-2 py-1 text-xs rounded border border-primary/30 bg-primary/10 text-primary;
+    transition: all 0.2s ease;
+  }
+
+  .cyber-tag:hover {
+    @apply bg-primary/20 border-primary/50 neon-glow-cyan;
+  }
+}
+
+@layer utilities {
+  /* Grid pattern background */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--neon-cyan) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--neon-cyan) / 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+/* Keyframes */
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0); }
+  5% { clip: rect(70px, 9999px, 71px, 0); }
+  10% { clip: rect(29px, 9999px, 24px, 0); }
+  15% { clip: rect(69px, 9999px, 64px, 0); }
+  20% { clip: rect(37px, 9999px, 95px, 0); }
+  25% { clip: rect(4px, 9999px, 17px, 0); }
+  30% { clip: rect(56px, 9999px, 41px, 0); }
+  35% { clip: rect(49px, 9999px, 66px, 0); }
+  40% { clip: rect(9px, 9999px, 89px, 0); }
+  45% { clip: rect(85px, 9999px, 85px, 0); }
+  50% { clip: rect(78px, 9999px, 22px, 0); }
+  55% { clip: rect(39px, 9999px, 45px, 0); }
+  60% { clip: rect(58px, 9999px, 78px, 0); }
+  65% { clip: rect(37px, 9999px, 91px, 0); }
+  70% { clip: rect(17px, 9999px, 67px, 0); }
+  75% { clip: rect(46px, 9999px, 28px, 0); }
+  80% { clip: rect(54px, 9999px, 58px, 0); }
+  85% { clip: rect(82px, 9999px, 31px, 0); }
+  90% { clip: rect(25px, 9999px, 83px, 0); }
+  95% { clip: rect(13px, 9999px, 25px, 0); }
+  100% { clip: rect(31px, 9999px, 94px, 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(65px, 9999px, 119px, 0); }
+  5% { clip: rect(79px, 9999px, 19px, 0); }
+  10% { clip: rect(68px, 9999px, 11px, 0); }
+  15% { clip: rect(12px, 9999px, 26px, 0); }
+  20% { clip: rect(77px, 9999px, 97px, 0); }
+  25% { clip: rect(21px, 9999px, 85px, 0); }
+  30% { clip: rect(51px, 9999px, 39px, 0); }
+  35% { clip: rect(88px, 9999px, 71px, 0); }
+  40% { clip: rect(36px, 9999px, 22px, 0); }
+  45% { clip: rect(62px, 9999px, 55px, 0); }
+  50% { clip: rect(8px, 9999px, 41px, 0); }
+  55% { clip: rect(95px, 9999px, 29px, 0); }
+  60% { clip: rect(43px, 9999px, 82px, 0); }
+  65% { clip: rect(17px, 9999px, 93px, 0); }
+  70% { clip: rect(71px, 9999px, 47px, 0); }
+  75% { clip: rect(28px, 9999px, 61px, 0); }
+  80% { clip: rect(83px, 9999px, 33px, 0); }
+  85% { clip: rect(55px, 9999px, 75px, 0); }
+  90% { clip: rect(9px, 9999px, 89px, 0); }
+  95% { clip: rect(48px, 9999px, 15px, 0); }
+  100% { clip: rect(65px, 9999px, 119px, 0); }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  10% { transform: skew(-1deg); }
+  20% { transform: skew(0.5deg); }
+  30% { transform: skew(-0.5deg); }
+  40% { transform: skew(1deg); }
+  50% { transform: skew(0deg); }
+  60% { transform: skew(-0.5deg); }
+  70% { transform: skew(0.5deg); }
+  80% { transform: skew(-1deg); }
+  90% { transform: skew(0.5deg); }
+  100% { transform: skew(0deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px hsl(var(--neon-cyan) / 0.5), 
+                0 0 10px hsl(var(--neon-cyan) / 0.3); 
+  }
+  50% { 
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.8), 
+                0 0 40px hsl(var(--neon-cyan) / 0.5),
+                0 0 60px hsl(var(--neon-cyan) / 0.3); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes matrix-rain {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
 }
