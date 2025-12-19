@@ -67,9 +67,9 @@ const mockVideos = [
 ];
 
 const stats = [
-  { label: "Videos Indexed", value: "100+", icon: Database },
+  { label: "Videos Indexed", value: "670+", icon: Database },
   { label: "Hours of Content", value: "500+", icon: TrendingUp },
-  { label: "Searchable Quotes", value: "50K+", icon: Brain },
+  { label: "Searchable Quotes", value: "20K+", icon: Brain },
 ];
 
 const Index = () => {
